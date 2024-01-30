@@ -6,10 +6,15 @@ import SectionBorder from '@/Components/SectionBorder.vue';
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
+import WebAuthnKeyManager from './Partials/WebAuthnKeyManager.vue';
 
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
     sessions: Array,
+    team: Object,
+    availableRoles: Array,
+    permissions: Object,
+    webAuthnPublicKey: Object
 });
 </script>
 
@@ -28,7 +33,11 @@ defineProps({
 
                     <SectionBorder />
                 </div>
+                <div >
 
+
+                    <SectionBorder />
+                </div>
                 <div v-if="$page.props.jetstream.canUpdatePassword">
                     <UpdatePasswordForm class="mt-10 sm:mt-0" />
 

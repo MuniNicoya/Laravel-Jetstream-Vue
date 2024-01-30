@@ -52,6 +52,7 @@ class FortifyServiceProvider extends ServiceProvider
 
         // Custom for WebAuthn - Chongkan
         Webauthn::authenticateThrough(function (Request $request) {
+            dd('s');
             return array_filter([
                     config('webauthn.limiters.login') !== null ? null : EnsureLoginIsNotThrottled::class,
                     AttemptToAuthenticate::class,

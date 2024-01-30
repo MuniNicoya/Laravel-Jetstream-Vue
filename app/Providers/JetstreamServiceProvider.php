@@ -24,7 +24,7 @@ class JetstreamServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
-        Webauthn::loginViewResponseUsing(\App\Http\Responses\LoginViewResponse::class);
+        //Webauthn::loginViewResponseUsing(\App\Http\Responses\LoginViewResponse::class);
     }
 
     /**
@@ -47,7 +47,7 @@ class JetstreamServiceProvider extends ServiceProvider
             function (Request $request, array $data) {
                 return array_merge($data, [
                     // Custom data...
-                    $webAuthnPublicKey = ''
+                    $webAuthnPublicKey = 'Jetstream Profile Service Provider'
                 ]);
             }
         );

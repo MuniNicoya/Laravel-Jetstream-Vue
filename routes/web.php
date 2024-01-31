@@ -8,9 +8,6 @@ use LaravelWebauthn\Models\WebauthnKey;
 
 use Illuminate\Http\Request;
 
-use LaravelWebauthn\Http\Controllers\AuthenticateController;
-use LaravelWebauthn\Http\Controllers\WebauthnKeyController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

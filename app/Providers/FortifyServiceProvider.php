@@ -50,15 +50,15 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
-        // Custom for WebAuthn - Chongkan
-        Webauthn::authenticateThrough(function (Request $request) {
-            dd('s');
-            return array_filter([
-                    config('webauthn.limiters.login') !== null ? null : EnsureLoginIsNotThrottled::class,
-                    AttemptToAuthenticate::class,
-                    PrepareAuthenticatedSession::class,
-            ]);
-        });
+        // // Custom for WebAuthn - Chongkan
+        // Webauthn::authenticateThrough(function (Request $request) {
+
+        //     return array_filter([
+        //             config('webauthn.limiters.login') !== null ? null : EnsureLoginIsNotThrottled::class,
+        //             AttemptToAuthenticate::class,
+        //             PrepareAuthenticatedSession::class,
+        //     ]);
+        // });
 
     }
 }

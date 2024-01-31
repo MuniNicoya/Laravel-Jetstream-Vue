@@ -39,7 +39,7 @@ Route::middleware([
         return Inertia::render('Dashboard', [
             'laravelWebauthnVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
-            'webauthn-Keys' => $webauthnKeys // check keys
+            'webauthnKeys' => $webauthnKeys // check keys
         ]);
     })->name('dashboard');
 

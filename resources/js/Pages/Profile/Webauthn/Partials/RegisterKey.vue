@@ -5,7 +5,7 @@ import TextInput from '@/Components/TextInput.vue';
 import InputError from '@/Components/InputError.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Button from '@/Components/PrimaryButton.vue';
-import WaitForKey from '@/Pages/Webauthn/Partials/WaitForKey.vue';
+import WaitForKey from '@/Pages/Profile/Webauthn/Partials/WaitForKey.vue';
 
 const props = defineProps({
   errorMessage: String,

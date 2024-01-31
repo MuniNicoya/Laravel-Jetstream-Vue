@@ -13,7 +13,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Http\Request;
 
-use LaravelWebauthn\Services\Webauthn;
+use LaravelWebauthn\Models\WebauthnKey;
 
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -45,9 +45,10 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::inertia()->whenRendering(
             'Profile/Show',
             function (Request $request, array $data) {
+
                 return array_merge($data, [
                     // Custom data...
-                    $webAuthnPublicKey = 'Jetstream Profile Service Provider'
+                    'webauthnKeys' =>  $request->user()->webauthnKeys()->get()
                 ]);
             }
         );

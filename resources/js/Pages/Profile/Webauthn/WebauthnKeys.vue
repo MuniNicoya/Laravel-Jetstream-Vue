@@ -3,9 +3,9 @@ import { ref, nextTick, computed, onMounted } from 'vue';
 import { useForm, Link } from '@inertiajs/vue3';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Button from '@/Components/PrimaryButton.vue';
-import RegisterKey from '@/Pages/Webauthn/Partials/RegisterKey.vue';
-import DeleteKeyModal from '@/Pages/Webauthn/Partials/DeleteKeyModal.vue';
-import UpdateKey from '@/Pages/Webauthn/Partials/UpdateKey.vue';
+import RegisterKey from '@/Pages/Profile/Webauthn/Partials/RegisterKey.vue';
+import DeleteKeyModal from '@/Pages/Profile/Webauthn/Partials/DeleteKeyModal.vue';
+import UpdateKey from '@/Pages/Profile/Webauthn/Partials/UpdateKey.vue';
 import { webAuthnNotSupportedMessage } from '@/methods.js';
 import { startRegistration, browserSupportsWebAuthn } from '@simplewebauthn/browser';
 

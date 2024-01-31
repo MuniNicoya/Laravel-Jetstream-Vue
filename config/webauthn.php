@@ -110,7 +110,7 @@ return [
 
     'redirects' => [
         'login' => '/dashboard',
-        'register' => '/profile',
+        'register' => 'user/profile',
     ],
 
     /*

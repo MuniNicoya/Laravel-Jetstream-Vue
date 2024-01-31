@@ -1,12 +1,13 @@
 <script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue';
 import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue';
 import SectionBorder from '@/Components/SectionBorder.vue';
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
-import WebauthnKeys from '@/Pages/Profile/Webauthn/WebauthnKeys.vue'
+
+import ManageWebAuthnKeys from './Partials/ManageWebAuthnKeys.vue';
 
 
 defineProps({
@@ -21,12 +22,12 @@ defineProps({
 </script>
 
 <template>
-    <AppLayout title="Profile">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                Profile
-            </h2>
-        </template>
+    <AuthenticatedLayout title="Profile">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            Profile
+        </h2>
+
+
 
         <div>
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
@@ -37,7 +38,10 @@ defineProps({
                 </div>
                 <div >
 
-                    <WebauthnKeys :webauthnKeys="webauthnKeys" />
+                    <ManageWebAuthnKeys
+                    :sessions="sessions"
+                    :webauthnKeys="webauthnKeys"
+                    />
                     <SectionBorder />
                 </div>
                 <div v-if="$page.props.jetstream.canUpdatePassword">
@@ -64,5 +68,5 @@ defineProps({
                 </template>
             </div>
         </div>
-    </AppLayout>
+    </AuthenticatedLayout>
 </template>

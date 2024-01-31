@@ -9,7 +9,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import WebauthnLogin from '@/Pages/Webauthn/WebauthnLogin.vue';
+import WebauthnLogin from '@/Components/Webauthn/WebauthnLogin.vue';
 
 
 const props = defineProps({
@@ -62,7 +62,7 @@ const submit = () => {
     form.transform(data => ({
         ...data,
         remember: form.remember ? 'on' : '',
-    })).post(route('auth.login'), {
+    })).post(route('login'), {
         onFinish: () => form.reset('password'),
     });
 };

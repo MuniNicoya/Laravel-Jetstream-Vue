@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use LaravelWebauthn\Models\WebauthnKey;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
 
 use Illuminate\Http\Request;
 
@@ -33,6 +35,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function (Request $request) {
         $webauthnKeys = WebauthnKey::where('user_id', $request->user()->id)->get();
 
@@ -43,30 +46,20 @@ Route::middleware([
         ]);
     })->name('dashboard');
 
-    // Route::get('/registerWaKey', function () {
-    //     return Inertia::render('registerWaKey');
-    // })->name('registerWaKey');
+    //-- Settings
+    //Route::get('/settings', [SettingController::class, 'edit'])->name('setting.edit');
 
 });
 
 
 
-// // WebAuthn
-// Route::group([
-//     'middleware' => array_filter(array_merge(
-//         config('webauthn.middleware', ['web']),
-//         [
-//             config('webauthn.auth_middleware', 'auth').':'.config('webauthn.guard', 'web'),
-//         ]
-//     )),
-// ], function () {
-//     // Webauthn key registration
-//     if (config('webauthn.views.register') !== null) {
-//         Route::get('keys/create', [WebauthnKeyController::class, 'create'])->name('webauthn.create');
-//     }
-//     Route::post('keys/options', [WebauthnKeyController::class, 'create'])->name('webauthn.store.options');
-//     Route::post('keys', [WebauthnKeyController::class, 'store'])->name('webauthn.store');
-//     Route::delete('keys/{id}', [WebauthnKeyController::class, 'destroy'])->name('webauthn.destroy');
-//     Route::put('keys/{id}', [WebauthnKeyController::class, 'update'])->name('webauthn.update');
-// });
+//---
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    //Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //-- Settings
+    Route::get('/settings', [SettingsController::class, 'edit'])->name('setting.edit');
+});
 

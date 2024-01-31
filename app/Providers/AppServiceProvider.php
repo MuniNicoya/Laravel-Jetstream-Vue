@@ -14,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
-        Webauthn::loginViewResponseUsing(LoginViewResponse::class);
-        Webauthn::registerViewResponseUsing(RegisterViewResponse::class);
+
+            Webauthn::loginViewResponseUsing(LoginViewResponse::class);
+            Webauthn::registerViewResponseUsing(RegisterViewResponse::class);
     }
 
     /**

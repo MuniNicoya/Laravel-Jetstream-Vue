@@ -297,7 +297,7 @@ return [
     |
     */
 
-    'userless' => null,
+    'userless' => 'preferred',
 
     'database' => [
         'table' => env('WEBAUTHN_DB_TABLE', 'webauthn_keys'),

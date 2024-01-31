@@ -2,7 +2,7 @@
 import { ref, nextTick, watch, onMounted } from 'vue';
 import { router, useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
-import Button from '@/Components/Button.vue';
+import Button from '@/Components/PrimaryButton.vue';
 import WaitForKey from '@/Pages/Webauthn/Partials/WaitForKey.vue';
 import { webAuthnNotSupportedMessage } from '@/methods.js';
 import { startAuthentication, browserSupportsWebAuthn } from '@simplewebauthn/browser';

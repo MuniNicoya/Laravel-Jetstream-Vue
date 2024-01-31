@@ -45,10 +45,10 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        'mfa' => [
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            'webauthn',
-        ],
+        // 'mfa' => [
+        //     \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        //     'webauthn',
+        // ],
     ];
 
     /**

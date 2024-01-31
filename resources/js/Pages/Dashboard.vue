@@ -1,8 +1,16 @@
 <script setup>
 import { useAttrs } from 'vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Components/Welcome.vue';
 
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+import { Head, Link, router } from '@inertiajs/vue3';
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initFlowbite();
+})
 
 defineProps({
     webauthnKeys: Array,
@@ -13,20 +21,44 @@ defineProps({
 </script>
 
 <template>
-    <AppLayout title="Dashboard" :version="laravelWebauthnVersion">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                Dashboard
-            </h2>
-        </template>
+    <Head title="Dashboard" />
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
+    <AuthenticatedLayout>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div
+          class="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 h-32 md:h-64"
+        >
 
-                </div>
-            </div>
         </div>
-    </AppLayout>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
+        ></div>
+      </div>
+      <div
+        class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-4"
+      ></div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+        <div
+          class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"
+        ></div>
+      </div>
+
+
+
+    </AuthenticatedLayout>
 </template>

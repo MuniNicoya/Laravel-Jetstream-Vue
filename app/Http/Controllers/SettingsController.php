@@ -6,6 +6,13 @@ use App\Http\Requests\StoreSettingsRequest;
 use App\Http\Requests\UpdateSettingsRequest;
 use App\Models\Settings;
 
+use Inertia\Response;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+
+
 class SettingsController extends Controller
 {
     /**
@@ -35,18 +42,19 @@ class SettingsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Settings $settings)
-    {
-        //
-    }
-
-    /**
+      /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Settings $settings)
+    public function edit(Request $request): Response
+
     {
-        //
+        return Inertia::render('Settings/Edit', [
+            'user' => $request->user,
+            'status' => session('status'),
+        ]);
     }
+
+
 
     /**
      * Update the specified resource in storage.

@@ -1,6 +1,8 @@
 <!-- NavBar Component -->
 <script setup>
 import NavBarItems from './NavBarListItems.vue';
+
+
 </script>
 
 <template>

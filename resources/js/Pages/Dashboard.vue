@@ -1,6 +1,6 @@
 <script setup>
 import { useAttrs } from 'vue';
-import AppLayout from '@/Layouts/AppLayout.vue';
+
 
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { onMounted } from 'vue'

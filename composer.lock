@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d580b51599d9ff87f5701674e6e9aa3",
+    "content-hash": "99cae3c1b2c311cc978165f4d29bc322",
     "packages": [
         {
             "name": "asbiin/laravel-webauthn",

@@ -4,7 +4,21 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import { Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
+import { ref } from 'vue';
+
+const switchToTeam = (team) => {
+    router.put(route('current-team.update'), {
+        team_id: team.id,
+    }, {
+        preserveState: false,
+    });
+};
+
+const logout = () => {
+    //router.post(route('logout'));
+};
+const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
@@ -626,7 +640,7 @@ import { Link } from '@inertiajs/vue3';
             >
             <span
               class="block text-sm text-gray-900 truncate dark:text-white"
-              >name@flowbite.com</span
+              >{{ $page.props.auth.user.email }}</span
             >
           </div>
           <ul
@@ -643,7 +657,7 @@ import { Link } from '@inertiajs/vue3';
               <a
                 href="#"
                 class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                >Account settings</a
+                >Manage Teams</a
               >
             </li>
           </ul>
@@ -729,7 +743,7 @@ import { Link } from '@inertiajs/vue3';
             aria-labelledby="dropdown"
           >
             <li>
-              <DropdownLink :href="route('logout')" method="post" as="button">
+              <DropdownLink :href="logout()" method="post" as="button" @click.prevent="logout">
                                           Log Out
                                       </DropdownLink>
 

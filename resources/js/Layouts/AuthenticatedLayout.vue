@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import NavLayout from './NavLayout.vue';
 import AsideLayout from'./AsideLayout.vue';
-
+import { Head, Link, router } from '@inertiajs/vue3';
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 
@@ -10,6 +10,13 @@ import { initFlowbite } from 'flowbite'
 onMounted(() => {
     initFlowbite();
 })
+defineProps({
+    title: String,
+    version: String,
+});
+
+
+
 </script>
 
 <template>

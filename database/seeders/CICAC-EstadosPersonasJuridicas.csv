@@ -1,0 +1,32 @@
+codEstado,Descripción
+-1,No Disponible
+1,Inscrita
+2,Asignacion De Cedula Juridica Decreto N° 34691-J
+3,Inmovilizada Administrativamente
+4,Disuelta
+5,Inmovilizada Judicialmente
+6,Quebrada
+7,Fusionada
+8,Nombre Reservado
+9,Con Advertencia Administrativa
+10,En Administracion Por Intervencion Judicial
+11,En Convenio Preventivo
+12,Con Intervencion Administrativa
+13,Cancelada De Oficio
+14,Liquidada
+15,Cerrada
+16,Traslado Domicilio Social
+17,Plazo Social Vencido
+18,En Causal De Extincion
+19,Inscrita En Tomos
+20,Cancelada Judicialmente
+21,Con Advertencia Judicial
+22,Disuelta Por Ley 9024
+23,Inscrito Con Nota De Advertencia
+30,Transformado
+31,Disuelta Por Vencimiento Del Plazo
+32,Disuelta Por Ley 9428
+33,Disuelta Por Ley 9699
+34,En Proceso Concursal
+35,Eliminada Por Ley N° 7092 (Reforma Ley N°10160)
+36,Disuelta Por Ley 9957

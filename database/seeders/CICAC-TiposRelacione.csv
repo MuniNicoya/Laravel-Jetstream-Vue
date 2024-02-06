@@ -1,0 +1,28 @@
+CodTipoRelacion,Descripcion del tipo de relación,"Estado (1-Inactivo, 2-Activo)"
+1,Abuelo - Abuela,2
+2,Abuelo - Abuela del cónyuge,2
+3,Bisabuelo - Bisabuela,2
+4,Bisnieto - Bisnieta,2
+5,Cónyuge,2
+6,Cónyuge divorciado,2
+7,Cuñado - Cuñada,2
+8,Hermano - Hermana,2
+9,Hijastro - Hijastra,2
+10,Hijo - Hija,2
+11,Hijo - Hija adoptivo,2
+12,Hijo - Hija de pareja sentimental,2
+13,Madre,2
+14,Padre,2
+15,Padres afectivos,2
+16,Nieto - Nieta,2
+17,Nieto - Nieta del cónyuge,2
+18,Nuera,2
+19,Pareja de hecho registrada,2
+20,Pareja sentimental,2
+21,Primo - Prima,2
+22,Sobrino - Sobrina,2
+23,Suegro - Suegra,2
+24,Tío - Tía,2
+25,Yerno,2
+32,Otra,2
+33,Sin tipo relación,2

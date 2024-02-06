@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+             CatalogoCuentaSeeder::class
             //VendorSeeder::class,
             //SupplySeeder::class,
 

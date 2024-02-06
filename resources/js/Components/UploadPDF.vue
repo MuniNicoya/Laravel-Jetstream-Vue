@@ -10,6 +10,8 @@
 <script>
 import { getDocument } from '../../../node_modules/pdfjs-dist/build/pdf.min.mjs';
 pdfjsLib.GlobalWorkerOptions.workerSrc = '../../../node_modules/pdfjs-dist/build/pdf.worker.min.mjs';
+
+
 export default {
   data() {
     return {
@@ -17,7 +19,7 @@ export default {
     };
   },
   methods: {
-    loadPdf(event) {
+    async loadPdf(event) {
       const file = event.target.files[0];
 
       if (file && file.type === 'application/pdf') {
@@ -28,7 +30,7 @@ export default {
         };
 
         reader.readAsDataURL(file);
-        logPdfContent();
+    
       } else {
         // Handle invalid file type
         console.error('Invalid file type. Please select a PDF.');

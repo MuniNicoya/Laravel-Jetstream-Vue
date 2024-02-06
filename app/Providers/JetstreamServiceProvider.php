@@ -11,6 +11,11 @@ use App\Actions\Jetstream\RemoveTeamMember;
 use App\Actions\Jetstream\UpdateTeamName;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
+use Illuminate\Http\Request;
+
+use LaravelWebauthn\Models\WebauthnKey;
+use LaravelWebauthn\Services\Webauthn;
+use App\Http\Responses\RegisterViewResponse;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -19,7 +24,8 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Webauthn::registerViewResponseUsing(RegisterViewResponse::class);
+        //Webauthn::loginViewResponseUsing(\App\Http\Responses\LoginViewResponse::class);
     }
 
     /**
@@ -36,6 +42,18 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::removeTeamMembersUsing(RemoveTeamMember::class);
         Jetstream::deleteTeamsUsing(DeleteTeam::class);
         Jetstream::deleteUsersUsing(DeleteUser::class);
+
+        Jetstream::inertia()->whenRendering(
+            'Profile/Show',
+            function (Request $request, array $data) {
+
+                return array_merge($data, [
+                    // Custom data...
+                    'webauthnKeys' =>  $request->user()->webauthnKeys()->get(),
+
+                ]);
+            }
+        );
     }
 
     /**

@@ -13,6 +13,13 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 
+// Custom fro WebAuthn
+
+use LaravelWebauthn\Actions\AttemptToAuthenticate;
+use LaravelWebauthn\Actions\EnsureLoginIsNotThrottled;
+use LaravelWebauthn\Actions\PrepareAuthenticatedSession;
+use LaravelWebauthn\Services\Webauthn;
+
 class FortifyServiceProvider extends ServiceProvider
 {
     /**
@@ -42,5 +49,16 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
+
+        // // Custom for WebAuthn - Chongkan
+        // Webauthn::authenticateThrough(function (Request $request) {
+
+        //     return array_filter([
+        //             config('webauthn.limiters.login') !== null ? null : EnsureLoginIsNotThrottled::class,
+        //             AttemptToAuthenticate::class,
+        //             PrepareAuthenticatedSession::class,
+        //     ]);
+        // });
+
     }
 }

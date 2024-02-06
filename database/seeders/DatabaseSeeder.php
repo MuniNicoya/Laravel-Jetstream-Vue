@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,10 +15,37 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'E. Chongkan',
+            //'type' => 'residential',
+            'email' => 'e.chongkan@gmail.com',
+            'password' => Hash::make('12345'),
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+             CatalogoCuentaSeeder::class, 
+             NacionalidadSeeder::class,
+             ActividadesEconomicaSeeder::class,
+             //VendorSeeder::class,
+            //SupplySeeder::class,
+
+            // CountrySeeder::class,
+            // StateSeeder::class,
+            // CantonSeeder::class,
+            // DistelectSeeder::class,
+
+            //RoleSeeder::class,
+            //PermissionSeeder::class
+            // roles permission pivot
+            // roles user pivot
+
+
+
+
+
+
+            //
+
+        ]);
     }
 }

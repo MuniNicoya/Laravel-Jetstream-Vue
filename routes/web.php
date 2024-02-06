@@ -122,10 +122,23 @@ Route::middleware('auth')->group(function () {
        return Inertia::render('Profile/Direcciones', [
            'laravelWebauthnVersion' => Application::VERSION,
            'phpVersion' => PHP_VERSION,
-   
  
        ]);
      })->name('addresses');
+
+
+     Route::get('/scanners/image2text', function (Request $request) {
+ 
+ 
+       return Inertia::render('Scanners/Image2Text', [
+           'laravelWebauthnVersion' => Application::VERSION,
+           'phpVersion' => PHP_VERSION,
+       
+ 
+       ]);
+     })->name('image2text');
+
+
 
 //asas
 

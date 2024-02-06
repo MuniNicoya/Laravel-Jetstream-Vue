@@ -1,3 +1,5 @@
+# Loggin (Registro) de Eventos 
+
 ### 1. **Propósito del Registro:**
    - Definir claramente el propósito de cada declaración de registro. Comprender si el registro es para depuración, monitoreo, auditoría o seguimiento de errores.
 
@@ -29,16 +31,36 @@
    - Implementar mecanismos de rotación de registros para gestionar los tamaños de archivos de registro y evitar problemas de espacio en disco. Rotar los registros según el tiempo.
 
 
+
+
+## Niveles de Severidad
+
+```php
+use Illuminate\Support\Facades\Log;
+ 
+Log::emergency($message);
+Log::alert($message);
+Log::critical($message);
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
 ```
+
+## Canales de Notificación de Eventos
+
+```text
 | Nombre    | Descripción                                                   |
 |-----------|---------------------------------------------------------------|
-| custom    | Un controlador que llama a una fábrica especificada para crear un canal |
+| custom    | Un controlador que llama a una fábrica [personalizada](.././app/Http/Middleware/LogUserActions.php) para crear un canal |
 | daily     | Un controlador Monolog basado en RotatingFileHandler que rota diariamente |
 | errorlog  | Un controlador Monolog basado en ErrorLogHandler               |
 | monolog   | Un controlador de fábrica Monolog que puede utilizar cualquier controlador Monolog compatible |
 | papertrail| Un controlador Monolog basado en SyslogUdpHandler               |
 | single    | Un canal de registro basado en un solo archivo o ruta (StreamHandler) |
-| slack     | Un controlador Monolog basado en SlackWebhookHandler           |
+| slack     | Un controlador Monolog basado en [SlackWebhookHandler](https://github.com/Seldaek/monolog/blob/main/src/Monolog/Handler/SlackWebhookHandler.php)           |
 | stack     | Un envoltorio que facilita la creación de canales "multicanal" |
 | syslog    | Un controlador Monolog basado en SyslogHandler                 |
 ```
+

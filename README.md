@@ -208,8 +208,14 @@ Siguiendo estos pasos, estarás contribuyendo de manera efectiva al proyecto. As
    - PHP 8.3+ 
 
    ```bash
-   npm run dev
-   ```   
+   php artisan serve || sail up 
+   ```  
+   - You may also need to add your domain into your /etc/hosts file 
+
+   ```bash
+   sudo vi /etc/hosts 
+   127.0.0.1 yourdomain.test 
+   ```  
 
 ## Documentación y Estándares Espécificos del Proyecto:
    - [Documentación](./documentation)

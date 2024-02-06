@@ -1,5 +1,9 @@
 # Attestto - Republic
 ---
+
+
+
+
 ## Requisitos Previos
 Antes de comenzar, asegúrate de tener instalados los siguientes requisitos en tu entorno de desarrollo:
 
@@ -132,8 +136,6 @@ Si prefieres realizar pruebas de navegador, puedes utilizar Laravel Dusk. A cont
 
 
 
-
-
 ## Contribución a Proyecto en GitHub
 
 Si estás interesado/a en contribuir a este proyecto en GitHub, a continuación se describen las instrucciones básicas:
@@ -193,7 +195,7 @@ Si estás interesado/a en contribuir a este proyecto en GitHub, a continuación 
 
 Siguiendo estos pasos, estarás contribuyendo de manera efectiva al proyecto. Asegúrate de seguir las guías de contribución específicas del proyecto si las hay. ¡Gracias por tu colaboración!
 
-## Configuración y Puesta en Marcha (Ambiente Local):
+## Configuración y Puesta en Marcha (Ambiente Local)
    - Haz clic en el botón "Fork" en la parte superior derecha de la página para crear tu propia copia del repositorio en tu cuenta de GitHub.
 
 ### 2. **Front-End:**
@@ -217,5 +219,25 @@ Siguiendo estos pasos, estarás contribuyendo de manera efectiva al proyecto. As
    127.0.0.1 yourdomain.test 
    ```  
 
-## Documentación y Estándares Espécificos del Proyecto:
+## Documentación y Estándares Espécificos del Proyecto
    - [Documentación](./documentation)
+   -- [Testing Guidelines](./documentation/testing.md)
+   -- [Logging Guidelines](./documentation/loggin.md)
+   -- [Localization Guidelines](./documentation/localization.md)
+
+## Code Coverage 
+   -- **Viewing**: Navigate to the [Coverage Report Directory](./coverage/) and Double-Click the Index.html file. (No server needed)
+   -- **Generating with (PEST)**: 
+
+   Note: You need to uninstall PEST if you want
+   ```bash
+   vendor/bin/phpunit --coverage-html coverage/
+   ```
+   
+
+## Discussion
+   - [Documentación](./documentation)
+   -- [Testing Guidelines](./documentation/testing.md)
+   -- [Logging Guidelines](./documentation/loggin.md)
+   -- [Localization Guidelines](./documentation/localization.md)
+

@@ -19,14 +19,18 @@ class CatalogoCuentaFactory extends Factory
     public function definition(): array
     {
       return [
-        'code' => $this->faker->randomNumber(),
-        'description' => $this->faker->word,
-        'sign' => $this->faker->randomDigit,
-        'level' => $this->faker->randomDigit,
+        'cuenta' => $this->faker->randomNumber(),
+        'descripcion' => $this->faker->word,
+        'signo' => $this->faker->randomDigit,
+        'nivel' => $this->faker->randomDigit,
         'vigencia' => $this->faker->dateTime(),
-        'is_enabled' => $this->faker->boolean,
-        'type' => $this->faker->randomDigit,
-        'created_by' => $this->faker->randomDigit,
+        'activa' => $this->faker->boolean,
+        'tipo' => $this->faker->randomDigit,
+        //--
+        'status' => 10,
+        'type' => 0,
+        'team_id' => 1,
+        //'created_by' => $this->faker->randomDigit,
     ];
     
     }

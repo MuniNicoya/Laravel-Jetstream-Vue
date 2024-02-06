@@ -28,13 +28,16 @@ class CatalogoCuentaSeeder extends Seeder
             $attributes = [
               'cuenta' => $csvRow[0],
               'descripcion' => $csvRow[1],
-              'sign' => $csvRow[2],
-              'level' => $csvRow[3],
+              'signo' => $csvRow[2],
+              'nivel' => $csvRow[3],
               'vigencia' => $csvRow[4],
-              'status' => 10,
+              'activa' => $csvRow[5],
+              'tipo' => $csvRow[6],
+              //-- 
               'type' => 0,
-              'account_id' => 0,
-              'created_by' => 0,
+              'status' => 10,
+              'team_id' => 0,
+
           ];
 
             // Insert data into the database

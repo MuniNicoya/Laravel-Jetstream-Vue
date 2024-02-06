@@ -2,18 +2,14 @@
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import AuthenticationCard from '@/Components/AuthenticationCard.vue';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
-import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 const form = useForm({
-    name: '',
     email: '',
     password: '',
-    password_confirmation: '',
-    terms: false,
 });
 
 const submit = () => {
@@ -24,89 +20,77 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Register" />
+    <section class="h-screen flex items-center justify-center bg-no-repeat inset-0 bg-cover bg-[url('../images/bg.png')]">
+        <div class="container 2xl:px-80 xl:px-52">
+            <div class="bg-white rounded-lg p-5" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+                <div class="grid xl:grid-cols-5 lg:grid-cols-3 gap-6">
 
-    <AuthenticationCard>
-        <template #logo>
-            <AuthenticationCardLogo />
-        </template>
+                    <div class="xl:col-span-2 lg:col-span-1 hidden lg:block">
+                        <div class="bg-sky-600 text-white rounded-lg flex flex-col justify-between gap-10 h-full w-full p-7">
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
-                <TextInput
-                    id="name"
-                    v-model="form.name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
+                            <span class="font-semibold tracking-widest uppercase">TechAuth </span>
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
+                            <div>
+                                <h1 class="text-3xl/tight mb-4">We're here to help you level up.</h1>
+                                <p class="text-gray-200 font-normal leading-relaxed">Use a long, easy-to-remember secret phrase like "yo queria mucho a mi perrita lulu..."</p>
+                            </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
+                            <div>
+                                <img src="path/to/your/image.jpg" alt="Eduardo's Image" class="h-36 rounded-lg">
+                            </div>
 
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-                <TextInput
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
-            </div>
-
-            <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
-                <InputLabel for="terms">
-                    <div class="flex items-center">
-                        <Checkbox id="terms" v-model:checked="form.terms" name="terms" required />
-
-                        <div class="ms-2">
-                            I agree to the <a target="_blank" :href="route('terms.show')" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">Privacy Policy</a>
                         </div>
                     </div>
-                    <InputError class="mt-2" :message="form.errors.terms" />
-                </InputLabel>
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                    Already registered?
-                </Link>
+                    <div class="xl:col-span-3 lg:col-span-2 lg:m-10">
+                        <div>
+                            <h1 class="text-2xl/tight mb-3">Sign Up</h1>
+                            <p class="text-sm font-medium leading-relaxed">We are here to help you and we'd love to connect with you.</p>
+                        </div>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
+                        <form @submit.prevent="submit">
+                            <div class="space-y-5 mt-10">
+                                <div>
+                                    <InputLabel for="email" value="Email" />
+                                    <TextInput
+                                        id="email"
+                                        v-model="form.email"
+                                        type="email"
+                                        class="text-gray-500 border-gray-300 focus:ring-0 focus:border-gray-400 text-sm rounded-lg py-2.5 px-4 w-full"
+                                        required
+                                        placeholder="Enter Your Email"
+                                        autocomplete="username"
+                                    />
+                                    <InputError class="mt-2" :message="form.errors.email" />
+                                </div>
+
+                                <div>
+                                    <InputLabel for="password" value="Password" />
+                                    <TextInput
+                                        id="password"
+                                        v-model="form.password"
+                                        type="password"
+                                        class="text-gray-500 border-gray-300 focus:ring-0 focus:border-gray-400 text-sm rounded-lg py-2.5 px-4 w-full"
+                                        required
+                                        placeholder="Enter Your Password"
+                                        autocomplete="new-password"
+                                    />
+                                    <InputError class="mt-2" :message="form.errors.password" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between gap-6 mt-8">
+                                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                    Sign Up
+                                </PrimaryButton>
+                                <p class="text-sm font-medium text-gray-500">Already have an account? <Link :href="route('login')" class="ms-2 underline text-sky-600">Sign In</Link></p>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
             </div>
-        </form>
-    </AuthenticationCard>
+        </div>
+    </section>
 </template>

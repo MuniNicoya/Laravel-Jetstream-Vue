@@ -28,6 +28,8 @@ class LogUserActions
           // Add any additional information you want to log
       ]);
 
+      
+
       return $response;
     }
 }

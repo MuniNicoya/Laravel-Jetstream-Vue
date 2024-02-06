@@ -1,0 +1,22 @@
+CodTipoIngresoExtraordinario,Descripcion,"Estado (1-Inactivo, 2-Activo)"
+0,Desconocido,1
+1,Depósitos judiciales,2
+2,Donación,2
+3,Herencia,2
+4,Indemnización por póliza de seguro,2
+5,Liquidación de pensión voluntaria,2
+6,Liquidación laboral,2
+7,Premio de lotería o juegos de azar,2
+8,Venta de acciones,2
+9,Venta de derecho de negocio,2
+10,Venta de maquinaria,2
+11,Venta de patente,2
+12,Venta de propiedad,2
+13,Venta de vehículo,2
+14,Beneficiario en caso del fallecimiento de la persona,2
+15,Indemnización laboral,2
+16,Pago de cesantía,2
+17,Pago de derechos laborales,2
+18,Venta del derecho de propiedad intelectual,2
+19,Venta de los derechos de autor,2
+20,Venta de semovientes ,2

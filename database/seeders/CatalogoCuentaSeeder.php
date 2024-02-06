@@ -26,14 +26,15 @@ class CatalogoCuentaSeeder extends Seeder
         while (($csvRow = fgetcsv($csvData)) !== false) {
             // Map CSV columns to database columns
             $attributes = [
-              'code' => $csvRow[0],
-              'description' => $csvRow[1],
+              'cuenta' => $csvRow[0],
+              'descripcion' => $csvRow[1],
               'sign' => $csvRow[2],
               'level' => $csvRow[3],
               'vigencia' => $csvRow[4],
-              'is_enabled' => $csvRow[5],
-              'type' => $csvRow[6],
-              'created_by' => 1,
+              'status' => 10,
+              'type' => 0,
+              'account_id' => 0,
+              'created_by' => 0,
           ];
 
             // Insert data into the database

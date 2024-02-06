@@ -1,0 +1,11 @@
+CodEstadoCivil,Descripción
+-1,No Disponible
+0,Desconocido
+1,Soltero
+2,Casado
+3,Separado
+4,Divorciado
+5,Viudo
+6,Célibe
+7,Reconciliación Judicial
+8,Anulado

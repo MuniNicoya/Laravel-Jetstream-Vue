@@ -1,0 +1,7 @@
+CodTipoIngreso,Descripción,"Estado (1-Inactivo, 2-Activo)"
+1,Dividendos,2
+2,Honorarios,2
+3,Comisiones,2
+4,Excedentes,2
+5,Dietas,2
+6,Utilidades,2

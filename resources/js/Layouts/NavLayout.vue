@@ -650,9 +650,9 @@ const showingNavigationDropdown = ref(false);
             aria-labelledby="dropdown"
           >
             <li>
-              <DropdownLink :href="route('profile.edit')">
-              My profile</DropdownLink>
-
+              <ResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
+                                Profile
+                            </ResponsiveNavLink>
 
             </li>
             <li>

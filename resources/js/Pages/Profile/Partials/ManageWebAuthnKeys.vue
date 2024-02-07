@@ -19,30 +19,32 @@ defineProps({
 const confirmingLogout = ref(false);
 const passwordInput = ref(null);
 
-const form = useForm({
-    password: '',
-});
+// const form = useForm({
+//     password: '',
+// });
 
-const confirmLogout = () => {
-    confirmingLogout.value = true;
 
-    setTimeout(() => passwordInput.value.focus(), 250);
-};
 
-const logoutOtherBrowserSessions = () => {
-    form.delete(route('other-browser-sessions.destroy'), {
-        preserveScroll: true,
-        onSuccess: () => closeModal(),
-        onError: () => passwordInput.value.focus(),
-        onFinish: () => form.reset(),
-    });
-};
+// const confirmLogout = () => {
+//     confirmingLogout.value = true;
 
-const closeModal = () => {
-    confirmingLogout.value = false;
+//     setTimeout(() => passwordInput.value.focus(), 250);
+// };
 
-    form.reset();
-};
+// const logoutOtherBrowserSessions = () => {
+//     form.delete(route('other-browser-sessions.destroy'), {
+//         preserveScroll: true,
+//         onSuccess: () => closeModal(),
+//         onError: () => passwordInput.value.focus(),
+//         onFinish: () => form.reset(),
+//     });
+// };
+
+// const closeModal = () => {
+//     confirmingLogout.value = false;
+
+//     form.reset();
+// };
 </script>
 
 <template>

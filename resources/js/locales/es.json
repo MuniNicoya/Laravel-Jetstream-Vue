@@ -1,0 +1,22 @@
+{
+  "common": {
+    "welcome": "Tip de Seguridad",
+    "logout": "Cerrar sesión",
+    "email": "Email",
+    "password": "Frase Secreta",
+    "enter_email": "Ingresa tu correo electrónico",
+    "enter_password": "Cómo queria a mi perrita lulu.."
+  },
+  "authentication": {
+    "register": {
+      "intro": "¡Bienvenido al registro! Estamos emocionados de que te unas a nosotros.",
+      "secret_phrase_message": "Utiliza una frase secreta segura para proteger tu cuenta. Recuerda que debe ser fácil de recordar para ti, pero difícil de adivinar para otros. ejem: como queria a mi perrita lulu...",
+      "have_account_message": "¿Ya tienes una cuenta? Inicia sesión aquí.",
+      
+      "sign_up": "Registrarse"
+    },
+    "sign_in": "Iniciar sesión"
+
+  }
+
+}

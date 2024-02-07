@@ -27,7 +27,7 @@ const userNameRef = ref(props.userName);
 const form = useForm({
   email: '',
   password: '',
-  remember: false,
+  remember: true,
 });
 watch(() => props.publicKey, (value) => {
   publicKeyRef.value = value;
@@ -54,6 +54,7 @@ const getKey = () => {
       }
     })
     .catch((e) => {
+      form.errors.email = e.response.data.message;
       errorMessage.value = e.response.data.message;
     });
 };
@@ -76,16 +77,6 @@ const reload = () => {
 
 <template>
   <Head title="Log in" />
-
-  <AuthenticationCard>
-    <template #logo>
-      <AuthenticationCardLogo />
-    </template>
-
-    <div class="block mt-4">
-      
-    </div>
-  </AuthenticationCard>
 
   <section class="h-screen flex items-center justify-center bg-no-repeat inset-0 bg-cover bg-[url('../images/bg.png')]">
     <div class="container 2xl:px-80 xl:px-52">
@@ -123,27 +114,33 @@ const reload = () => {
           <div class="xl:col-span-3 lg:col-span-2 lg:mx-10 my-auto">
             <div>
               <h1 class="text-2xl/tight mb-3">Hola de Nuevo!</h1>
-              <p class="text-sm font-medium leading-relaxed">We are here to help you and we'd love to connect with you.
+              <p class="text-sm font-medium leading-relaxed">
+                Por favor ingresa tu usuario o correo para saber quien eres.
               </p>
             </div>
 
             <div class="space-y-5 mt-10">
-              <!-- <div v-if=" publicKeyRef "> -->
+              <div v-if=" publicKeyRef ">
                 <form @submit.prevent=" getKey ">
                   <WebauthnLogin :remember=" true " :public-key=" publicKeyRef " />
+                    
                 </form>
-              <!-- </div> -->
+              </div> 
               <!-- <div v-else> -->
                   <!-- Regular Form -->
+                  <PrimaryButton class="ms-4" :class=" { 'opacity-25': form.processing } " :disabled=" form.processing ">
+                        Ingresar
+                      </PrimaryButton>
                   <form @submit.prevent=" submit ">
                     <div>
                       <InputLabel for="email" value="Email" />
                       <TextInput id="email" v-model=" form.email " type="email" class="mt-1 block w-full" required autofocus
                         autocomplete="email" />
                       <InputError class="mt-2" :message=" form.errors.email " />
+                     
                     </div>
 
-                    <div class="mt-4">
+                    <div id="password_block" class="mt-4">
                       <InputLabel for="password" value="Password" />
                       <TextInput id="password" v-model=" form.password " type="password" class="mt-1 block w-full" required
                         autocomplete="current-password" />
@@ -168,6 +165,11 @@ const reload = () => {
                     </div>
 
                   </form>
+                  <div class="block mt-4">
+              <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                    Forgot your password?
+                </Link>
+              </div>
               <!-- </div> -->
             </div>
             <div class="flex flex-wrap items-center justify-between gap-6 mt-8">
@@ -180,4 +182,5 @@ const reload = () => {
       </div>
     </div>
   </section>
+
 </template>

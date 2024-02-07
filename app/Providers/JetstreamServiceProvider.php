@@ -25,7 +25,7 @@ class JetstreamServiceProvider extends ServiceProvider
     public function register(): void
     {
         Webauthn::registerViewResponseUsing(RegisterViewResponse::class);
-        //Webauthn::loginViewResponseUsing(\App\Http\Responses\LoginViewResponse::class);
+        Webauthn::loginViewResponseUsing(\App\Http\Responses\LoginViewResponse::class);
     }
 
     /**
@@ -49,6 +49,7 @@ class JetstreamServiceProvider extends ServiceProvider
 
                 return array_merge($data, [
                     // Custom data...
+                    // Keys for the user to register or update his keys.
                     'webauthnKeys' =>  $request->user()->webauthnKeys()->get(),
 
                 ]);
@@ -75,5 +76,13 @@ class JetstreamServiceProvider extends ServiceProvider
             'create',
             'update',
         ])->description('Editor users have the ability to read, create, and update.');
+
+        Jetstream::role('backup_contact', 'Contacto de Respaldo', [
+          'read',
+          'create',
+          'update',
+        ])->description('Los contactos de Respaldo únicamente tienen acceso cuando el sistema detecta las alertas que has configurado.');
+
+        
     }
 }

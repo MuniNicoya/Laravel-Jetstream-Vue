@@ -66,7 +66,7 @@ const submit = () => {
                             <div class="space-y-5 mt-10">
                               <!-- name-->
                               <div>
-                                  <InputLabel for="name" value="Nombre de la Cuenta o Negocio" />
+                                  <InputLabel for="name" value="Nombre" />
                                   <TextInput
                                       id="name"
                                       v-model="form.name"
@@ -110,15 +110,7 @@ const submit = () => {
                                 </div>
                             </div>
 
-                            <div class="flex flex-wrap items-center justify-between gap-2 mt-8">
-                                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                    <!-- Utiliza la función de traducción t para acceder a los mensajes -->
-                                    {{ t('authentication.register.sign_up') }}
-                                </PrimaryButton>
-                                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                    <!-- Utiliza la función de traducción t para acceder a los mensajes -->
-                                    {{ t('authentication.register.sign_up') }}
-                                </PrimaryButton>
+                            <div class="flex flex-wrap items-center justify-between gap-6 mt-8">
                                 <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                                     <!-- Utiliza la función de traducción t para acceder a los mensajes -->
                                     {{ t('authentication.register.sign_up') }}

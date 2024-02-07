@@ -16,7 +16,7 @@ const switchToTeam = (team) => {
 };
 
 const logout = () => {
-    //router.post(route('logout'));
+    router.post(route('logout'));
 };
 const showingNavigationDropdown = ref(false);
 </script>
@@ -68,6 +68,8 @@ const showingNavigationDropdown = ref(false);
           />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
         </a>
+        <!-- SEARCH-->
+
         <form action="#" method="GET" class="hidden md:block md:pl-2">
           <label for="topbar-search" class="sr-only">Search</label>
           <div class="relative md:w-64 md:w-96">
@@ -738,14 +740,20 @@ const showingNavigationDropdown = ref(false);
               </a>
             </li>
           </ul>
+           <!-- Authentication -->
+           <form method="POST" @submit.prevent="logout">
+                                <ResponsiveNavLink as="button">
+                                    Log Out
+                                </ResponsiveNavLink>
+                            </form>
           <ul
             class="py-1 text-gray-700 dark:text-gray-300"
             aria-labelledby="dropdown"
           >
             <li>
-              <DropdownLink :href="logout()" method="post" as="button" @click.prevent="logout">
+              <!-- <DropdownLink :href="logout()" method="post" as="button" @click.prevent="logout">
                                           Log Out
-                                      </DropdownLink>
+                                      </DropdownLink> -->
 
             </li>
           </ul>

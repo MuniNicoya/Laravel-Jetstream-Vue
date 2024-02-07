@@ -86,16 +86,12 @@ const webauthnLoginCallback = (data) => {
 
 <template>
   <div>
-    <div v-if="!isSupported">
-      {{ webAuthnNotSupportedMessage() }}
-    </div>
-    <div v-else>
+      {{ webAuthnNotSupportedMessage }}
 
       <InputError :message="authForm.errors.data" class="mt-2" />
 
       <Button class="ms-2" @click="start()" v-show="!processing">
-        Retry
+        Login with Key
       </Button>
     </div>
-  </div>
 </template>

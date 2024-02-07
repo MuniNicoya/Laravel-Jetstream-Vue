@@ -278,7 +278,7 @@ return [
     |
     */
 
-    'user_verification' => 'discouraged',
+    'user_verification' => 'preferred',
 
     /*
     |--------------------------------------------------------------------------

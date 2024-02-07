@@ -1,0 +1,1 @@
+https://talltips.novate.co.uk/laravel/passwordless-login

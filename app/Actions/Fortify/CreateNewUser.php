@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
+use Illuminate\Validation\Rules\Password;
+
 class CreateNewUser implements CreatesNewUsers
 {
-    use PasswordValidationRules;
+    //use PasswordValidationRules;
+
+    protected function passwordRules(): array
+    {
+        return ['required', 'string', Password::default()];
+    }
+
 
     /**
      * Create a newly registered user.

@@ -8,8 +8,9 @@ import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
 
 import ManageWebAuthnKeys from './Partials/ManageWebAuthnKeys.vue';
+import { Link } from '@inertiajs/vue3';
 
-
+import NavLink from '@/Components/NavLink.vue';
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
     sessions: Array,
@@ -23,14 +24,14 @@ defineProps({
 
 <template>
     <AuthenticatedLayout title="Profile">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Profile
-        </h2>
-
-
-
         <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+          
+
+
+
+            <div class="mx-auto py-10 sm:px-6 lg:px-8">
+            
+
                 <div v-if="$page.props.jetstream.canUpdateProfileInformation">
                     <UpdateProfileInformationForm :user="$page.props.auth.user" />
 

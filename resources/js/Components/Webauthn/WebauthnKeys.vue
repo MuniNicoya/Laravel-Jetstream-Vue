@@ -19,7 +19,7 @@ const errorMessage = ref('');
 
 const register = ref(false);
 const registerForm = useForm({
-  name: '',
+  name: navigator.appName ,
 });
 const keyBeingDeleted = ref(null);
 const keyBeingUpdated = ref(null);

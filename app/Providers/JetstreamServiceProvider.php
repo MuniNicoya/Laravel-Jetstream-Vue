@@ -51,7 +51,7 @@ class JetstreamServiceProvider extends ServiceProvider
                     // Custom data...
                     // Keys for the user to register or update his keys.
                     'webauthnKeys' =>  $request->user()->webauthnKeys()->get(),
-
+                    'message' => 'yo yo yo yo',
                 ]);
             }
         );

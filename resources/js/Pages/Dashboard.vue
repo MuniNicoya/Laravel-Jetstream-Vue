@@ -6,6 +6,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import { Head, Link, router } from '@inertiajs/vue3';
+import ChatWindow from '@/Components/ChatWindow.vue';
+import MessageBox from '@/Components/MessageBox.vue';
 
 // initialize components based on data attribute selectors
 onMounted(() => {
@@ -22,13 +24,15 @@ defineProps({
 
 <template>
     <Head title="Dashboard" />
-
+    
     <AuthenticatedLayout>
+        <ChatWindow/>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <div
           class="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 h-32 md:h-64"
         >
-
+       
         </div>
         <div
           class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"

@@ -16,3 +16,11 @@ WebAuthn, o Autenticación Web, es un estándar de seguridad que permite a los u
 - La llave Pública se debe generar Server-Side en aquellas vistas en donde se requiera autenticar al usuario con este método. 
 - Importar la libería Webuthn.js 
 - Generar una petición al llavero del dispositivo, usando la llave pública del usuario (Public-Key)
+
+- El Dispositivo se encarga de guardar las credeciales del usuario. 
+-- El usuario puede solicitar que se le presente la interfaz de Authenticación con Firma Digital. (Buttons)
+-- La interfaz puede solicitar automáticamente al usuario que ingrese sus credenciales. e.j. Si el usuario ha configurado esta opción en Settings. 
+
+## Fujo: 
+
+- El usuario abre la página de login y elige si desea ingresar con WebAuthn o con Email+Frase

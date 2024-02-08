@@ -38,7 +38,7 @@ class CreateOpenidEndUserClaimsTable extends Migration
             $table->string('phone_number')->nullable();
             $table->boolean('phone_number_verified')->nullable();
             $table->json('address')->nullable();
-            $table->bigInteger('updated_at')->nullable();
+           
             $table->timestamps();
         });
     }

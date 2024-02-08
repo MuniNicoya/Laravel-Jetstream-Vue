@@ -86,7 +86,7 @@ const reload = () => {
           <div class="xl:col-span-2 lg:col-span-1 hidden lg:block">
             <div class="bg-sky-600 text-white rounded-lg flex flex-col justify-between gap-10 h-full w-full p-7">
 
-              <span class="font-semibold tracking-widest uppercase">Republic </span>
+              <span class="font-semibold tracking-widest uppercase">Attestto </span>
 
               <div>
                 <h1 class="text-3xl/tight mb-4">Frase Motivadora</h1>

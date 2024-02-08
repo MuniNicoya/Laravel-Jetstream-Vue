@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOpenidAdditionalEndUserClaimsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migration.
@@ -15,7 +15,7 @@ class CreateOpenidAdditionalEndUserClaimsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         // Creating table to store additional end user claims
         
@@ -50,9 +50,9 @@ class CreateOpenidAdditionalEndUserClaimsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         // Dropping the additional end user claims table if it exists
         Schema::dropIfExists('openid_additional_end_user_claims');
     }
-}
+};
